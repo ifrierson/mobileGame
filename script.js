@@ -70,7 +70,7 @@ window.addEventListener('load', function () {
             this.frameInterval = 1000 / this.fps;
             this.speed = 0;
             this.vy = 0;
-            this.weigth = 1;
+            this.weigth = 0.3;
         }
         restart() {
             this.x = 100;
@@ -111,8 +111,8 @@ window.addEventListener('load', function () {
                 this.speed = 5;
             } else if (input.keys.indexOf('ArrowLeft') > -1) {
                 this.speed = -5;
-            } else if (input.keys.indexOf('ArrowUp') > -1 || (input.keys.indexOf('swipe up') > -1) && this.onGround()) {
-                this.vy -= 30;
+            } else if ((input.keys.indexOf('ArrowUp') > -1 || input.keys.indexOf('swipe up') > -1) && this.onGround()) {
+                this.vy -= 20;
             } else {
                 this.speed = 0;
             }
